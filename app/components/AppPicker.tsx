@@ -11,7 +11,7 @@ type ItemType = {
 }
 
 type InputProps = {
-    icon: string
+    icon?: string
     placeholder?: string
     item: ItemType[]
     selectedItem: ItemType
@@ -30,7 +30,6 @@ const AppPicker = ({ icon, placeholder, item, selectedItem, onSelectedItem }: In
                     <Icon name='chevron-down' size={25} color={colors.medium} />
                 </View>
             </TouchableWithoutFeedback>
-            <AppTextInput placeholder='hy' icon='email' />
             <Modal visible={modalVisible} animationType='slide' >
                 <Button title='Close' onPress={() => setModalVisible(false)} />
                 <FlatList
@@ -63,9 +62,9 @@ const styles = StyleSheet.create({
     },
     text: {
         fontSize: 18,
-        color: colors.dark,
+        color: colors.medium,
         marginRight: 25,
-        paddingVertical: 10,
+        paddingVertical: 15,
         flex: 1
     }
 })

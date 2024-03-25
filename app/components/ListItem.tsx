@@ -2,6 +2,8 @@ import { Image, ImageSourcePropType, StyleSheet, Text, TouchableOpacity, View } 
 import React from 'react'
 import colors from '../config/colors'
 import Swipeable from 'react-native-gesture-handler/Swipeable';
+import  Icon  from 'react-native-vector-icons/MaterialCommunityIcons';
+import AppIcon from './AppIcon';
 type ListItemProps = {
     title: string
     subTitle?: string
@@ -23,9 +25,10 @@ const ListItem = ({ title, subTitle, image, renderRightAction ,IconComponent}: L
                     source={image}
                 />}
                 <View style={styles.detailsContainer}>
-                    <Text style={styles.title}>{title}</Text>
-                    {subTitle && <Text style={styles.price}>{subTitle}</Text>}
+                    <Text numberOfLines={1} style={styles.title}>{title }</Text>
+                    {subTitle && <Text numberOfLines={2} style={styles.price}>{subTitle }</Text>}
                 </View>
+                <Icon name='chevron-right' size={25} style={styles.icon} />
             </View>
         </Swipeable>
     )
@@ -38,7 +41,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         // height: 70,
         backgroundColor: colors.white,
-        paddingVertical: 10,
+        // paddingVertical: 10,
         alignItems: 'center',
         paddingLeft:10,
     },
@@ -51,7 +54,8 @@ const styles = StyleSheet.create({
     },
     detailsContainer: {
         margin: 10,
-        // justifyContent: 'center'
+        // justifyContent: 'center',
+        flex:1,
     },
     title: {
         fontSize: 22,
@@ -63,4 +67,7 @@ const styles = StyleSheet.create({
         fontWeight: '500',
         color: colors.medium
     },
+    icon: {
+        marginRight:10
+    }
 })

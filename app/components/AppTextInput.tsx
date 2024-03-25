@@ -16,6 +16,7 @@ const AppTextInput = ({ icon, placeholder, ...otherProps }: InputProps) => {
             <TextInput
                 style={styles.inputText}
                 placeholder={placeholder}
+                placeholderTextColor={colors.medium}
                 {...otherProps}
             />
         </View>
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
     inputText: {
         fontSize: 18,
         color: colors.dark,
-        marginRight: 25,
-        flex: 1
+        flex: 1,
+        paddingVertical:15
     }
 })

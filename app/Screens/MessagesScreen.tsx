@@ -55,14 +55,14 @@ const MessagesScreen = () => {
             keyExtractor={message => message.id.toString()}
             renderItem={({ item }) => <ListItem
                 title={item.title}
-                // subTitle={item.subTitle}
-                IconComponent={<AppIcon
-                    size={50}
-                    name='email'
-                    iconCoolor={colors.white}
-                    backgroundColor={colors.secondary}
-                />}
-                // image={item.image}
+                subTitle={item.subTitle}
+                // IconComponent={<AppIcon
+                //     size={50}
+                //     name='email'
+                //     iconCoolor={colors.white}
+                //     backgroundColor={colors.secondary}
+                // />}
+                image={item.image}
                 renderRightAction={() => <ListItemDeleteAction onPress={() => { handleDelete(item) }} />}
             />
             }
