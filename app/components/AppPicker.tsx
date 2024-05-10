@@ -1,4 +1,4 @@
-import { Button, FlatList, Modal, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native'
+import { Button, ColorSchemeName, ColorValue, FlatList, Modal, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native'
 import React, { useState } from 'react'
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import colors from '../config/colors';
@@ -8,6 +8,8 @@ import PickerItem from './PickerItem';
 type ItemType = {
     label: string
     value: number
+    backgroundColor: ColorValue | undefined
+    icon: string
 }
 
 type InputProps = {
@@ -34,8 +36,9 @@ const AppPicker = ({ icon, placeholder, item, selectedItem, onSelectedItem }: In
                 <Button title='Close' onPress={() => setModalVisible(false)} />
                 <FlatList
                     data={item}
+                    numColumns={3}
                     keyExtractor={(item) => item.value.toString()}
-                    renderItem={({ item }) => <PickerItem label={item.label} onPress={() => {
+                    renderItem={({ item }) => <PickerItem label={item.label} backgroundColor={item.backgroundColor} icon={item.icon} onPress={() => {
                         onSelectedItem(item)
                         setModalVisible(false)
                     }} />}

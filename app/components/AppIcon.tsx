@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { ColorValue, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import MaterialIcon from "react-native-vector-icons/MaterialCommunityIcons";
 type IconProps = {
     name: string,
     size?: number
     iconCoolor?: string
-    backgroundColor: string
+    backgroundColor: ColorValue | undefined
 }
 
 const AppIcon = ({ name, size = 50, iconCoolor = '#fff', backgroundColor }: IconProps) => {

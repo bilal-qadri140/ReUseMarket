@@ -2,17 +2,10 @@ import { DimensionValue, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 
-import PickerItem from './PickerItem'
 import { ErrorMessage } from './forms'
 import AppPicker from './AppPicker'
 import { useFormikContext } from 'formik'
 
-const categories = [
-    { label: 'Furniture', value: 1 },
-    { label: 'Clothing', value: 2 },
-    { label: 'Cameras', value: 3 },
-    { label: 'Cars', value: 4 },
-]
 
 type FormPickerProps = {
     name: string
@@ -20,7 +13,7 @@ type FormPickerProps = {
     placeholder: string
     width?: DimensionValue | undefined
 }
-interface MyFormValues {
+type MyFormValues = {
     [key: string]: any;
 }
 

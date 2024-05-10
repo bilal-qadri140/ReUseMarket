@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StatusBar, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import WelcomeScreen from './app/Screens/WelcomeScreen'
 import ViewImageScreen from './app/Screens/ViewImageScreen'
@@ -30,6 +30,7 @@ const App = () => {
 
   return (
     <GestureHandlerRootView style={{ backgroundColor: '#fff', flex: 1 }}>
+      <StatusBar barStyle={'dark-content'} backgroundColor={'white'} />
       {/* <AccountScreen /> */}
       {/* <AppPicker
         icon='apps'
